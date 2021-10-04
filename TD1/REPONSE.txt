@@ -1,0 +1,76 @@
+Aya BEN BRAHIM
+
+-----------------------------------TD1----------------------------
+
+Exercice1 : Eclipse
+
+2) Lorsque je tape sysoutet et je clique sur Ctrl + espace, il me génère la méthode System.out.println() ;
+
+3) Lorsque je tape toStr et je clique sur Ctrl + espace dans la classe, il m’affiche la méthode toString.
+
+4) Lorsque je tape main et je clique sur Ctrl + espace dans la classe, il m’affiche la méthode main.
+
+5) Lorsque je tape Ctrl+ space, il m’affiche le constructeur de la classe.
+   Lorsque je tape set +Ctrl+ space, il m’affiche le setter de foo.
+
+6) Lors de la sélection du nom de la classe en cliquant sur Alt+Shift+R, il m’affiche une fenêtre pour modifier le nom de la classe
+
+
+Exercice 2 : Point
+
+1) Ça marche car on a utilisé les variables privées de la même classe.
+
+2) Ça ne marche pas car les variables x et y sont privés de la classe Point. Donc ils sont visibles dans la classe TestPoint. On doit faire les getters de x et y pour pouvoir les appeler dans la classe TestPoint.
+
+3) On met la visibilité privée des attributs pour protéger les données de la classe et les attributs ne seront pas visibles par d’autres classes.
+
+4) Les accesseurs sont les getters et les setters. Oui on doit les faire pour pouvoir utiliser les attributs dans d’autres classes. (Soit pour afficher la valeur des attributs, soit pour modifier la valeur des attributs.)
+
+5) Lorsqu’on crée un constructeur paramétré, le constructeur par défaut (sans paramètres) ne sera pas utilisé. Le problème est dans Point p = new Poin() ; : lorsqu’on a créé un objet Point, il fait appel au constructeur qu’on a créée qui est paramétré donc il faut mettre les paramètre lors de la création de Point .
+
+6) Le problème c’est que les noms des arguments sont les même que les attributs. Le constructeur ne sait plus différencier les arguments des attributs. On doit mettre this pour les attributs locaux lorsqu’on met les mêmes noms de paramètres que les attributs.
+
+7) Il faut créer une variable statique
+
+8) Le compilateur sait quel constructeur appeler selon ce qui est entré dans les paramètres.
+
+
+Exercice 2 : Equality
+
+1) Ce code afficher true, false : On a "==" qui comparent les pointeurs, p1 et p2 pointent  sur la même adresse mémoire (true) alors que p3 pointe sur une adresse (#p1 -> false). 
+
+3) IndexOf retourne l'indice de la 1ère occurrence de l'élément en paramètre. Si le l'élément n'est pas trouvé dans la liste, elle retourne -1. Du coup on a 0 qui est l'indice du p1 et -1 car p3 n'est pas == à p1. IndexOf fait appel à la méthode equals 
+   On fait appel à la méthode IsSameAs(Point) pour résoudre le problème.
+
+Exercice 3: Polyline
+
+2) l'objet point ne sera pas ajouté dans le tableau puisque sa taille est dépassée.
+   -> Il faut parcourir le tableau et faire un test pour voir si la taille est dépassée ou non.
+
+5) on aura une exception : NullPointerException
+
+6) on n'est plus besoin de la méthode pointCapacity car la taille d'une linkedlist n'a pas de limite n'a pas de taille fixe.
+   Pour les methodes nbPoints et contains, on a des méthodes existantes dans linkedlist et on fait juste appel à leurs implémentations dans ces méthodes.
+
+
+Exercice 5 : Mutability and circle
+
+1) Les différentes signatures et possibilités pour cette méthode :
+   public void translate(int dx,int dy)
+   public void translate(Point p)
+
+5) le problème c'est que la méthode translate modifie le centre des deux cercles.
+   Pour l'éviter on peut créer un autre point avec les mêmes coordonnées que le point existant et l'associer au cercle c.
+
+6) le problème est que les 2 cercles sont translatés car ils utilisent le même point, la solution est de retourne un nouveau point lors de la translation d'un point. Cela ne translate pas le cercle car on appelle la fonction translate de la classe point. Pour modifier le cercle il faut utiliser directement la fonction translate de Circle.
+
+9) on doit faire une méthode statique car on n'a pas un cercle spécifique qui doit utiliser la méthode contains.
+
+Exercice 6 : Anneaux
+
+1) Oui il est intéressant de faire l'héritage puisqu’un anneau est un cercle. Donc l'anneau va hériter les attributs et les méthodes du cercle.
+
+4) le problème : on aura appel à la méthode toString du cercle et du coup l'attribut rayon interne ne sera pas affiché. Il faut redéfinir la méthode toString dans la classe Ring
+
+
+
