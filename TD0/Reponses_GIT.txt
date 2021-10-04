@@ -1,2 +1,7 @@
-Utilisation du GIT
+aya BEN BRAHIM
+------------TD0 : Utilisation du GIT----------------
+
+5) le terminal affiche la modification effectuée au niveau de la classe Point.
+8)Le hash de mon 1er commit : 61c98287146a997a70a473647b92157df90ec159
+
 
