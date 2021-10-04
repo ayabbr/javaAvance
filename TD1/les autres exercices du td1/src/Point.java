@@ -28,6 +28,11 @@ public class Point {
 		this.y=p2.y;
 		this.nbre+=1;
 	}
+	
+	/***** Pour le tp de GIT*****
+	 * essai de voir les modifications
+	 */
+	/****/
 	public String toString() {
 		return "("+this.x +"," + this.y+")";
 	}
