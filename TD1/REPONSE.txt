@@ -42,6 +42,20 @@ Exercice 2 : Equality
 3) IndexOf retourne l'indice de la 1ère occurrence de l'élément en paramètre. Si le l'élément n'est pas trouvé dans la liste, elle retourne -1. Du coup on a 0 qui est l'indice du p1 et -1 car p3 n'est pas == à p1. IndexOf fait appel à la méthode equals 
    On fait appel à la méthode IsSameAs(Point) pour résoudre le problème.
 
+Question de cours: 
+*la methode equals par defaut retourne quoi?
+
+ par défaut, la méthode equals() vérifie l'égalité des références des deux objets : donc deux objets égaux renverront la même valeur de hachage.
+ Donc elle retoune true si les deux objets ont la même référence sinon false.
+
+*Comment les methodes identifient un objet dans une collection?
+
+les methodes identifient un objet dans une collection par sa réference.
+
+*Quelle est la différence entre (== et !=) pour les types primitifs et pour les types objets?
+ Pour les types primitifs on va comparer les valeur des attributs alors que pour les types objets on va comparer les reférences des attributs.
+
+
 Exercice 3: Polyline
 
 2) l'objet point ne sera pas ajouté dans le tableau puisque sa taille est dépassée.
