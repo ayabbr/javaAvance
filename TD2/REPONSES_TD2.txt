@@ -1,0 +1,74 @@
+Exercice 1: Redefinition
+
+1. le main affiche :
+    42
+    42
+    24
+    24
+    24
+    24
+
+Puisqu'on a l'héritage, dans la classe Fille on a redéfinit la méthode meth(). Du coup on a
+l'affichage de 24. Pour la méthode printMeth(), elle fait appel à la méthode meth() qui est redéfinie 
+dans la classe Fille(affichage de 24).
+De même pour la classe mereFille.
+
+2. S'il est dans Fille, un objet de type Fille a accès à 2  méthodes meth() : la méthode de la classe mère qu'il hérite et sa méthode meth() redéfinie.
+   S'il est dans Main, il a accès à la méthode meth() redéfinie dans la classe Fille.
+3. Si les méthodes meth() sont statiques :
+
+42
+42
+24 // ici on a l'affichage du champs de la classe fille
+42 // la méthode printmeth utilise le champs 42 de la classe mère puisqu'on n'a pas fait une redéfinition de la méthode printmeth() dans la classe fille.  
+42 // puisque mereFille est de type Mere, elle va utiliser les champs de la classe Mere. Du coup on a l'affichage 42
+42
+
+
+
+3. Si meth sont des champs , l'affichage sera :
+     42
+     42
+     24 // le programme affiche le champs meth de la classe fille
+     42 // ici on a appel à la méthode printMeth() dans la classe mere qui utilise le champs meth de la classe mère. 
+     42  // puisque mereFille est un objet de type Mere, le champs meth de la classe Mere sera affiché.
+     42 //la méthode printMeth() de la classe Mere affiche son champs.
+
+
+
+Exercice 2:Redéfinition - surcharges
+
+1. les erreurs de compilation :
+au niveau de la classe Fille : la méthode e() ne doit pas être de visibilité private
+                               la redéfinition de la methodes h() et i() doivent avoir le même type de retour que les méthodes de la classe mère.
+                               la méthode k() doit utiliser l'exception de la méthode k() de la classe mère.
+           --> on doit garder la même signature pour pouvoir redéfinir une méthode dans une classe fille
+au niveau de la classe main : on a l'objet mere et mereFille de type Mere. La méthode miage() est une méthode propre à la classe Fille. On ne peut pas appeler une méthode d'une classe fille par un objet de type Mere.
+
+3. Redéfiniion :  lorque la sous-classe définit une méthode dont le nom, les paramètres et le type de retour sont identiques.
+   Surcharge :  possiblité de définir des méthodes possédant le même nom mais dont les arguments(paramètres et valeurs de retour) diffèrent.
+  les redéfintion :  la methode a() , b(Fille fille), c(Mere mere), d(), f(), j(), l() m() dans la classe fille
+  les surcharges : c() et c(Mere mere ) dans la classe Mere, c(Mere mere)et c(Fille b) et d() et d(Mere mere) dans la classe Fille.
+                   on a aussi la méthode g() est un surchage dans la classe Fille.
+
+4.
+Miage // l'objet fille fait appel à la méthode miage()
+Miage // on a encastré l'objet mereFille en Fille pour retourner un objet de type Fille et pouvoir appeler la méthode miage.
+Mere_a // appel à la méthode a() de la classe Mere
+Fille_a // appel à la méthode a() redénifinie de la classe Fille
+Fille_a // appel à la méthode a() redénifinie de la classe Fille
+Fille_a // appel à la méthode a() de la classe Fille
+Fille_b(Fille) // appel à la méthode b() redénifinie dans la classe Fille
+Mere_c // puisque la méthode c() est sans paramètre, l'objet mereFille fait appel à la méthode c() celle de la classe Mere
+Fille_c(Mere) //  puisqu'on a passé un objet de type Mere en paramètre, on va utiliser la méthode c(Mere mere)
+Fille_c(Mere) //  puisqu'on a passé un objet de type Mere en paramètre, on va utiliser la méthode c(Mere mere)
+Fille_c(Mere) // on a mereFille de type Mere qui fait appel à la méthode c(Mere mere) de la  classe Fille .
+Fille_c(Fille) // appel à la méthode c(Fille fille) de la classe Fille
+static Mere_d // appel à la méthode d() de la classe Mere
+static Mere_d // comme la méthode d() est statique l'objet mereFille va utiliser la méthode d() de la classe Mere.
+Mere_f // appel à la méthode printF() de Mere
+Mere_f // Comme on a l'héritage, on peut utiliser la méthode printF() de la classe Mere qui fait appel à son tour à la méthode f().
+Fille_j //appel à la méthode j() redénifinie de la classe Fille
+Mere_k //appel à la méthode k()  dans la classe Mere. puisqu'on on de l'héritage on peut utiliser les méthodes de la classe mère.
+Fille_l //appel à la méthode l() redénifinie de la classe Fille
+Fille_m //appel à la méthode m() redénifinie de la classe Fille
