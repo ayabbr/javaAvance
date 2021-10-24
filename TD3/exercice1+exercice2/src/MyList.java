@@ -1,4 +1,4 @@
-import java.util.LinkedList;
+
 
 public class MyList {
 	
@@ -14,7 +14,7 @@ public MyList(){
 
 public void add(String s) {
 	
-Cell c=  new Cell(s, racine);
+racine=  new Cell(s, racine);
 }
 
 public int size() {
@@ -86,14 +86,14 @@ public void add(String s, int i) {
 	public int sumLetters() {
 		int somme=0;
 		Cell c=racine;
-		int indice=0;
+		
 		
 	    while (c.getNext()!=null) {
 	    	
-	    	//somme+=c.getStr().length();
-	    	somme+=c.toString().length();
+	    	somme+=c.getStr().length();
+	    	
 		      c=c.getNext();
-		      indice++;
+		   
 		      
 	           }
 		return somme;
