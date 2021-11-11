@@ -1,27 +1,27 @@
 
-public class CellGeneric {
-	private	Object str;
+public class CellGeneric <T>  {
+	private	 T str;
 	
-	private	CellGeneric next;
+	private	CellGeneric<T> next;
 		
-		public CellGeneric(Object str, CellGeneric next) {
+		public CellGeneric(T s ) {
 			
-			this.str=str;
-			this.next=next;
+			this.str=s;
+			this.next=null;
 			
 		}
 		
-		public Object getStr() {
+		public T getStr() {
 			return str;
 		}
-		public void setStr(String str) {
+		public void setStr(T str) {
 			this.str = str;
 		}
 		
-		public CellGeneric getNext() {
+		public CellGeneric<T> getNext() {
 			return next;
 		}
-		public void setNext(CellGeneric next) {
+		public void setNext(CellGeneric<T> next) {
 			this.next = next;
 		}
 }

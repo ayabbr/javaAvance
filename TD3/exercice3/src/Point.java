@@ -49,6 +49,17 @@ public class Point {
 		this.y=this.y+dy;
 		
 	}
+	public boolean equals (Object o) {
+		if(this==o) return true;
+	
+	if(o instanceof Point) {
+	Point p= (Point)o;
+	return p.getX()==this.getX() && p.getY()==this.getY();
+	}}
+	 public int hashCode() {
+		 return x ^ Integer.returnleft();
+		 
+	 }
 	
 }
 

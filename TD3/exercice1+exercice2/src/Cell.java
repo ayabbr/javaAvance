@@ -2,7 +2,7 @@
 
 public class Cell {
 	
-private	String str;
+private	final String str;
 	
 private	Cell next;
 	
@@ -16,9 +16,7 @@ private	Cell next;
 	public String getStr() {
 		return str;
 	}
-	public void setStr(String str) {
-		this.str = str;
-	}
+
 	
 	public Cell getNext() {
 		return next;

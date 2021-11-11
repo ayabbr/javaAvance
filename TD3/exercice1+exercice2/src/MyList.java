@@ -3,6 +3,7 @@
 public class MyList {
 	
 private Cell racine;
+private int size;
 
 public MyList(Cell racine){
 	this.racine=racine;
@@ -10,14 +11,21 @@ public MyList(Cell racine){
 
 public MyList(){
 	this.racine=null;
+	this.size=0;
 }
 
 public void add(String s) {
-	
-racine=  new Cell(s, racine);
+	Cell c= new Cell(s, racine);
+	if (s==null) {
+		 throw new NullPointerException(" contenu ne peut pas etre null");
+	}
+	c.setNext(racine);
+    racine= c;
+    this.size++;
+
 }
 
-public int size() {
+/**public int size() {
 	int nbre=0;
 	
 	Cell c= racine;
@@ -27,16 +35,23 @@ public int size() {
 		c=c.getNext();
 	}
 	return nbre;
-}
+} **/
+
+public int size() {
+	return this.size;}
+
 
 public String toString() {
 	Cell c=racine;
-	String s="";
+	StringBuilder s=new StringBuilder();
+	
 	while (c.getNext()!=null) {
-		s=s+c.getStr() +", ";
+		//s=s+c.getStr() +", ";
+		s.append(c.getStr()).append(",");
+
 		c=c.getNext();
 	}
-	return s ;
+	return s.toString() ;
 			
 }
 
@@ -70,7 +85,8 @@ public void add(String s, int i) {
 	public String get(int index) {
 		//si l'indice est invalide on fait un test et on retourne un message d'erreur
 		if(index>size())
-            return "Invalid";
+           // return "Invalid"; // throw new index out of Bound();
+			throw new IllegalArgumentException("Invalid");
 		else {
 		Cell c=racine;
 		int indice=0;
@@ -79,7 +95,7 @@ public void add(String s, int i) {
 		      c=c.getNext();
 		      indice++;
 	           }
-	   return c.toString();
+	   return c.getStr();
 	}
 		}
 	

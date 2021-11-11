@@ -12,7 +12,7 @@ Circle c1 = new Circle(p1,100);
 m.put(p1, c1);
 System.out.println(m.containsKey(p1)); // true
 
-System.out.println(m.containsKey(new Point(1,2))); //false
+System.out.println(m.containsKey(new Point(100,200))); //false
 	}
 
 }

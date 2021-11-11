@@ -1,8 +1,9 @@
 
-public class MyListGeneric {
-	private CellGeneric racine;
+public class MyListGeneric <T>{
+	private CellGeneric <T> racine;
+	private int size;
 
-	public MyListGeneric (CellGeneric racine){
+	public MyListGeneric (CellGeneric <T> racine){
 		this.racine=racine;
 	}
 
@@ -10,11 +11,20 @@ public class MyListGeneric {
 		this.racine=null;
 	}
 
-	public void add(Object s) {
+	public void add(T s) {
 		
-	racine=  new CellGeneric(s, racine);
+	racine=  new CellGeneric <T>(s);
+	  if (s==null) {
+		  throw new NullPointerException(" contenu ne peut pas etre null");
+	  }
+	  
 	}
 
+	/**
+	 * 
+	 
+	 
+	
 	public int size() {
 		int nbre=0;
 		
@@ -25,34 +35,41 @@ public class MyListGeneric {
 			c=c.getNext();
 		}
 		return nbre;
-	}
+	}*/
+	public int size() {
+		return this.size;}
+	
 
 	public String toString() {
-		CellGeneric c=racine;
-		String s= null;
+		CellGeneric<T>c=racine;
+		StringBuilder s=new StringBuilder();
+		
 		while (c.getNext()!=null) {
-			s=s+c.getStr() +", ";
+			//s=s+c.getStr() +", ";
+			s.append(c.getStr()).append(",");
+
 			c=c.getNext();
 		}
-		return s ;
+		return s.toString() ;
 				
 	}
 
-	public void addLast(Object s) {
+	public void addLast(T s) {
 		if (racine==null) {
-		    racine= new CellGeneric(s, null);}
+		    racine= new CellGeneric<T>(s);}
 		else {
-		     CellGeneric c=racine;
+		     CellGeneric <T> c=racine;
 		     while (c.getNext()!=null) {		
 			      c=c.getNext();
-		                               }
-		    CellGeneric LastCell=new CellGeneric(s, null);
+		         }
+		    CellGeneric<T> LastCell=new CellGeneric<T>(s);
 		    c.setNext(c);
 	          }
+		this.size++;
 	}
 
-	public void add(String s, int i) {
-		CellGeneric c=racine;
+	public void add(T s, int i) {
+		CellGeneric<T >c=racine;
 		int indice=0;
 		
 	    while (c.getNext()!=null && indice!=i) {		
@@ -60,28 +77,30 @@ public class MyListGeneric {
 		      indice++;
 	           }
 	    
-	  CellGeneric nexti= new CellGeneric (s,c.getNext());
+	  CellGeneric <T>nexti= new CellGeneric<T> (s);
 			  c.setNext(nexti);
+			  
+			  this.size++;
 	     }
 		
 
-		public Object get(int index) {
+		public T get(int index) {
 			
 			if(index>size())
-	            return "Invalid";
+				throw new IllegalArgumentException("Invalid");
 			else {
-			CellGeneric c=racine;
+			CellGeneric<T> c=racine;
 			int indice=0;
 			
 		    while (c.getNext()!=null && indice!=index) {		
 			      c=c.getNext();
 			      indice++;
 		           }
-		   return c.toString();
+		   return c.getStr();
 		}
 			}
 		public boolean contains(Object o) {
-			CellGeneric c=racine;
+			CellGeneric <T> c=racine;
 			while (c.getNext()!=null) {	
 				if(c.getStr().equals(o)) return true;
 			      c=c.getNext();
@@ -93,7 +112,7 @@ public class MyListGeneric {
 
 		public int sumLetters() {
 			int somme=0;
-			CellGeneric c=racine;
+			CellGeneric <T> c=racine;
 			
 			
 		    while (c.getNext()!=null) {
