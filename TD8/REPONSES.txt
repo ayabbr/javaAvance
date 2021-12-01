@@ -1,0 +1,11 @@
+TD8
+
+Exercice 1 :
+
+1. la signature de la méthode doit etre public static int  myMax(Object... y)
+
+2.
+
+Exercice 2 :
+
+1. Le code ne compile pas car List<String> n'est pas un sous-type de List<Object>
