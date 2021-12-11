@@ -3,17 +3,15 @@ import java.util.List;
 
 public  class Exo2 <T extends Object> {
 
-	private static void print(List <? extends Object> list) {
+	private static void print(List<?> list) {
 		for( Object o:list)
 		System.out.println(o);
 		}
 	
-	public static void longueur(List< ? extends CharSequence> list) {
-		int i=0;
-		for( Object o:list) {
-			System.out.println("la longeur de l'objet"+i+1+ "="+ o.toString().length());
-		i++;
-			}
+	public static  <T extends CharSequence> void longueur(List<T> list) {
+		for(T o : list) {
+			System.out.println(o.length());
+		}
 	}
 
 

@@ -4,8 +4,22 @@ Exercice 1 :
 
 1. la signature de la méthode doit etre public static int  myMax(Object... y)
 
-2.
+2. On peut declarer le premier argument directement et ensuite le tableau variables ... qui peut etre vide 
+4. L'interface Comparable<T> permet de définir la comparaison entre différents objets,
+en fonction des valeur de retour 0,1,-1 
+on peut déterminer comment définir l'égalité la superiorite et inferieur 
+Pour résumer: 
+   on définit d'abord le type de retour ensuite on le retourne <T> 
+   on veut qu'on compare que les objets qui sont comparables et qui implement comparableTo
+   on modifie la définition de T qui doit etre comparble avec lui meme 
+   Si l'objet this est plus grand on retourne 1 sinon -1 si egaux 0
 
 Exercice 2 :
 
 1. Le code ne compile pas car List<String> n'est pas un sous-type de List<Object>
+2. On peut utiliser un type parametré ou un wildcards (?) directement en arguments
+
+Exercice 4 - 
+La complexité est egale à : O(n) 
+car j'ai utilisé un iterator donc je ne parcours la liste qu'une fois pour acceder à un element 
+sans iterateur je devrai a chaque fois parcourir la liste du début jusqu'a l'indice i => alors la complexité serait = O(n²)
